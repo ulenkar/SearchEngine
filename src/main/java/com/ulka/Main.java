@@ -10,7 +10,7 @@ public class Main {
                 "document2", "the lazy brown dog sat in the corner",
                 "document3", "the red fox bit the lazy dog");
         var documentManager = new DocumentManager();
-        documentManager.load(documents);
+        documentManager.loadAll(documents);
         documentManager.sort();
         SearchEngine.init(documentManager);
     }
