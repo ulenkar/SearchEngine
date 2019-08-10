@@ -23,7 +23,7 @@ public class WordRecord {
      */
     public void addOccurring(String docName){
         if (documentsOccurrences.containsKey(docName)){
-            documentsOccurrences.replace(docName, documentsOccurrences.get(docName) + 1);
+            documentsOccurrences.replace(docName, getDocumentOccurrences(docName) + 1);
         } else {
             documentsOccurrences.put(docName, 1);
         }
@@ -36,7 +36,7 @@ public class WordRecord {
      */
     public void countTFForDocument(String docName, int docLenght){
         if (documentsOccurrences.containsKey(docName)) {
-            documentsTF.put(docName, documentsOccurrences.get(docName).doubleValue() / docLenght);
+            documentsTF.put(docName, getDocumentOccurrences(docName).doubleValue() / docLenght);
         }
     }
 
@@ -73,7 +73,39 @@ public class WordRecord {
      * Returns documents where word occurs, sorted by TF-IDF
      * @return list of documents in which word occurs
      */
-    public String getDocumentsSortedTFIDF() {
+    public String getDocumentsSortedByTFIDF() {
         return documentsTFIDF.keySet().toString();
+    }
+
+    /**
+     * @return number of occurrences of this word in given document
+     */
+    public Integer getDocumentOccurrences(String docName) {
+        if (documentsOccurrences.containsKey(docName)) {
+            return documentsOccurrences.get(docName);
+        } else {
+            return 0;
+        }
+    }
+
+    /**
+     * @return tf for given document for this word
+     */
+    public Double getDocumentTF(String docName) {
+        return documentsTF.get(docName);
+    }
+
+    /**
+     * @return Idf for this word
+     */
+    public Double getIdf() {
+        return idf;
+    }
+
+    /**
+     * @return TF-IDF for given document for this word
+     */
+    public Double getDocumentTFIDF(String docName) {
+        return documentsTFIDF.get(docName);
     }
 }

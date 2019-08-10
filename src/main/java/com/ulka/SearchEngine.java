@@ -9,16 +9,16 @@ public class SearchEngine {
 
     /**
      * Initializes search engine - enables user to input word and outputs information about its occurrences.
-     * @param wordsManager WordsManager object managing word and their occurrences in documents.
+     * @param wordManager WordManager object managing word and their occurrences in documents.
      */
-    public static void init(WordsManager wordsManager) {
+    public static void init(WordManager wordManager) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to search engine! To exit enter \"exit\"");
         System.out.println("Enter word to search: ");
         String word;
 
         while (!"exit".equalsIgnoreCase(word = scanner.nextLine())) {
-            String documentsList = wordsManager.find(word);
+            String documentsList = wordManager.find(word);
             System.out.println("Found documents: " + documentsList);
             System.out.println("Enter word to search: ");
         }
