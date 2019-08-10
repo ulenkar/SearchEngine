@@ -1,3 +1,5 @@
+package com.Ulka;
+
 import com.ulka.WordRecord;
 import org.junit.jupiter.api.Test;
 

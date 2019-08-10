@@ -1,3 +1,5 @@
+package com.Ulka;
+
 import com.ulka.WordManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
