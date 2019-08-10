@@ -9,7 +9,7 @@ public class Main {
                 "document1","the brown fox jumped over the brown dog",
                 "document2", "the lazy brown dog sat in the corner",
                 "document3", "the red fox bit the lazy dog");
-        var documentManager = new DocumentManager();
+        var documentManager = new WordsManager();
         documentManager.loadAll(documents);
         documentManager.sort();
         SearchEngine.init(documentManager);
